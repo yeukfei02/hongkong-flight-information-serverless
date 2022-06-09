@@ -1,0 +1,36 @@
+service: hk-flight-information-serverless
+
+frameworkVersion: '3'
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: prod
+  region: ap-southeast-1
+  apiName: hk-flight-information-serverless-prod
+  tracing:
+    apiGateway: true
+    lambda: true
+  environment:
+    NODE_ENV: production
+  apiGateway:
+    shouldStartNameWithService: true
+    description: hk flight information serverless prod
+  lambdaHashingVersion: 20201221
+  architecture: arm64
+  timeout: 30
+
+functions:
+  main:
+    handler: dist/main.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: '{proxy+}'
+
+plugins:
+  - serverless-offline
