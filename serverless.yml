@@ -1,3 +1,5 @@
+org: yeukfei05
+app: hk-flight-information-serverless
 service: hk-flight-information-serverless
 
 frameworkVersion: '3'
@@ -17,7 +19,6 @@ provider:
   apiGateway:
     shouldStartNameWithService: true
     description: hk flight information serverless prod
-  lambdaHashingVersion: 20201221
   architecture: arm64
   timeout: 30
 
