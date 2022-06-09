@@ -4,7 +4,7 @@ Hong Kong Flight Information Api in aws lambda
 
 documentation: <https://documenter.getpostman.com/view/3827865/Uz5MEtj1>
 
-api url: <>
+api url: <https://igp43k9wz6.execute-api.ap-southeast-1.amazonaws.com/prod>
 
 ## Requirement
 
